@@ -17,6 +17,12 @@ public class SoftDrinks extends Product {
 
 
     }
+
+    public void buy(int bought){
+        softDrinksAvailabe -= bought;
+        System.out.println("Available Soft Drinks: "+ softDrinksAvailabe);
+    }
+
     public  int getStockProductAvailable(){
 
         return softDrinksAvailabe;
