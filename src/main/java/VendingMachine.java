@@ -1,11 +1,12 @@
 
-public class VendingMachine {
+public class VendingMachine  {
 
     static  int productStock= 0;
 
-    public static  void buy(Product product,int itemsToBuy){
+    public static  void buy(Product product,int itemsToBuy) throws  Exception {
 
         product.buy(itemsToBuy);
+
 
     }
 
@@ -14,25 +15,24 @@ public class VendingMachine {
 
         Product softDrinks = new SoftDrinks();
 
-        Product Dairychocolate = new Chocolates();
+        Product Dairywoman = new Chocolates();
 
         softDrinks.addStock(softDrinks,5);
-        Dairychocolate.addStock(Dairychocolate,5);
         softDrinks.addStock(softDrinks,5);
 
-
-//        softDrinks.addStock(softDrinks,6);
-//
-//        Dairychocolate.addStock(Dairychocolate,5);
-//        Dairychocolate.addStock(Dairychocolate,5);
+        Dairywoman.addStock(Dairywoman,5);
 
 
+        softDrinks.addStock(softDrinks,6);
 
-        VendingMachine.buy(softDrinks,2);
-        VendingMachine.buy(softDrinks,2);
+        Dairywoman.addStock(Dairywoman,5);
+        Dairywoman.addStock(Dairywoman,5);
 
-//TODO: prevent it from changing the variable after making new instance of a class.
-//        VendingMachine.buy(softDrinks,5);
+
+
+//        VendingMachine.buy(softDrinks,2);
+//        VendingMachine.buy(softDrinks,2);
+
 
 
         System.out.println("Stock available :"+productStock+ "\n");
