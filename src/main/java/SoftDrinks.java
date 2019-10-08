@@ -1,19 +1,21 @@
 public class SoftDrinks extends Product {
-
-     static int softDrinksAvailabe=0;
+    
+//    public static int totalStock = 0;
+      int softDrinksAvailabe=0;
 
     String productName = "Soft Drinks";
 
     public void addStock(Product product, int newStock){
         softDrinksAvailabe = softDrinksAvailabe + newStock;
 
-        stockCount++;
+        // stockCount++;
 
         System.out.println("Added new stock:");
         System.out.println(productName +" Added : " +"("+newStock +") Items");
         System.out.println("Total stock of "+productName+ ":"+ softDrinksAvailabe+"\n\n");
 
-        System.out.println("Stock available: "+ stockCount );
+        // System.out.println("Stock available: "+ stockCount );
+
 
 
     }
@@ -26,5 +28,13 @@ public class SoftDrinks extends Product {
     public  int getStockProductAvailable(){
 
         return softDrinksAvailabe;
+    }
+
+    public  void numberOfProductInthevendingMachine(){
+        totalStock += softDrinksAvailabe;
+        
+
+       System.out.println(totalStock); 
+       System.out.println();
     }
 }
