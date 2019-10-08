@@ -1,6 +1,7 @@
-public class SaltyCracksAllEatenException{
+public class SaltyCracksAllEatenException extends ProductNotFoundException{
 
-    public SaltyCracksAllEatenException(String exceptionMessage){
+
+    public SaltyCracksAllEatenException(String exceptionMessage) {
         super(exceptionMessage);
     }
 }

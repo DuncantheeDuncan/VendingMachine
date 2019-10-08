@@ -18,9 +18,12 @@ public class Chocolates extends Product{
 
 
     }
-    public void buy(int bought){
+    public void buy(int bought)throws ChocolatesAllGoneException{
         chocolateAvalable -= bought;
-        System.out.println("Available Soft Drinks: "+ chocolateAvalable);
+        if (chocolateAvalable <  0){
+            throw new ChocolatesAllGoneException("Sorry today is not the day, out of stock");
+        }
+        System.out.println("Available "+productName+": "+ chocolateAvalable);
     }
 
 
@@ -30,9 +33,10 @@ public class Chocolates extends Product{
         return chocolateAvalable;
     }
 
-    public  void numberOfProductInthevendingMachine(){
+    public  int numberOfProductInthevendingMachine(){
         totalStock +=chocolateAvalable;
         System.out.println(totalStock); 
-        System.out.println(); 
+        System.out.println();
+        return totalStock;
     }
 }
