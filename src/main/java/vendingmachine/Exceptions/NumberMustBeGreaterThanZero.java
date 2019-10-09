@@ -1,3 +1,5 @@
+package vendingmachine.Exceptions;
+
 public class NumberMustBeGreaterThanZero extends ProductNotFoundException {
 String exceptionMessage;
     public NumberMustBeGreaterThanZero(String exceptionMessage){

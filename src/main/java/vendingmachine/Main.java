@@ -1,4 +1,11 @@
-public class Main extends VendingMachine{
+package vendingmachine;
+
+import vendingmachine.Exceptions.*;
+import vendingmachine.Products.Chocolates;
+import vendingmachine.Products.Product;
+import vendingmachine.Products.SoftDrinks;
+
+public class Main {
 
 
     public static void main(String[] args) {
@@ -15,7 +22,7 @@ public class Main extends VendingMachine{
 
                 //  buying product
                 VendingMachine.buy(softDrinks,20);
-//                VendingMachine.buy(null,1);// gets INvalidException
+//                vendingmachine.VendingMachine.buy(null,1);// gets INvalidException
                 VendingMachine.buy(DairyChocolate,21);
 
 

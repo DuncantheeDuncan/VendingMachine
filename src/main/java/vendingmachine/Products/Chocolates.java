@@ -1,9 +1,12 @@
+package vendingmachine.Products;
 
-public class Chocolates extends Product{
+import vendingmachine.Exceptions.ChocolatesAllGoneException;
+
+public class Chocolates extends Product {
 
     // public static int totalStock = 0;
    static int chocolateAvalable=0;
-    String productName = "Chocolates";
+    String productName = "vendingmachine.Products.Chocolates";
 
     public void addStock(Product product, int newStock){
         chocolateAvalable = chocolateAvalable + newStock;
@@ -18,7 +21,7 @@ public class Chocolates extends Product{
 
 
     }
-    public void buy(int bought)throws ChocolatesAllGoneException{
+    public void buy(int bought)throws ChocolatesAllGoneException {
         chocolateAvalable -= bought;
         if (chocolateAvalable <  0){
             throw new ChocolatesAllGoneException("Sorry today is not the day, out of stock");
@@ -34,9 +37,9 @@ public class Chocolates extends Product{
     }
 
     public  int numberOfProductInthevendingMachine(){
-        totalStock +=chocolateAvalable;
-        System.out.println(totalStock); 
+        Product.totalStock +=chocolateAvalable;
+        System.out.println(Product.totalStock);
         System.out.println();
-        return totalStock;
+        return Product.totalStock;
     }
 }

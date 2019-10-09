@@ -1,6 +1,8 @@
-public class InvalidProductException extends  ProductNotFoundException {
+package vendingmachine.Exceptions;
+
+public class InvalidProductException extends ProductNotFoundException {
     String exceptionMessage;
-    InvalidProductException(String exceptionMessage){
+    public InvalidProductException(String exceptionMessage){
         super(exceptionMessage);
         this.exceptionMessage = exceptionMessage;
 

@@ -1,4 +1,8 @@
+package vendingmachine.Products;
 
+import vendingmachine.Exceptions.NumberMustBeGreaterThanZero;
+import vendingmachine.Exceptions.SoftDrinksOutOfStockException;
+import vendingmachine.Products.Product;
 
 public class SoftDrinks extends Product {
     

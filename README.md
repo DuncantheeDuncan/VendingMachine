@@ -1,1 +1,1 @@
-# VendingMachine
+# vendingmachine.VendingMachine

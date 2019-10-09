@@ -1,9 +1,13 @@
+package vendingmachine;
 
+import vendingmachine.Exceptions.InvalidProductException;
+import vendingmachine.Exceptions.ProductNotFoundException;
+import vendingmachine.Products.Product;
 
 public class VendingMachine  {
 
 
-    public static  void buy(Product product,int itemsToBuy) throws ProductNotFoundException ,InvalidProductException {
+    public static  void buy(Product product, int itemsToBuy) throws ProductNotFoundException, InvalidProductException {
 
         if (product instanceof  Product){
             product.buy(itemsToBuy);

@@ -1,3 +1,5 @@
+package vendingmachine.Exceptions;
+
 public class ProductNotFoundException extends Exception {
 
 String exceptionMessage;

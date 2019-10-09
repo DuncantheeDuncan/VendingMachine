@@ -1,5 +1,6 @@
+package vendingmachine.Exceptions;
 
-public class ChocolatesAllGoneException extends ProductNotFoundException{
+public class ChocolatesAllGoneException extends ProductNotFoundException {
     String exceptionMessage;
 public ChocolatesAllGoneException(String exceptionMessage){
     super(exceptionMessage);

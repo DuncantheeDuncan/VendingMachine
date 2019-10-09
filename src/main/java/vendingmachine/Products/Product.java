@@ -1,9 +1,14 @@
+package vendingmachine.Products;
+
+import vendingmachine.Exceptions.NumberMustBeGreaterThanZero;
+import vendingmachine.Exceptions.ProductNotFoundException;
+
 public class Product {
 
     public  int stockCount = 0;
     public static int totalStock = 0;
 
-public void addStock(Product product, int newStock)throws NumberMustBeGreaterThanZero{ }
+public void addStock(Product product, int newStock)throws NumberMustBeGreaterThanZero { }
 
 public int getStockAvailable(){ return stockCount;}
 
