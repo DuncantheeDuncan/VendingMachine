@@ -13,8 +13,8 @@ public class VendingMachine {
     int saltySnackAvailable = 0;
 
     String softdrinks = "soft drinks";
-    String chocolate = " Chocolates";
-    String snacks = " Salty snacks";
+    String chocolate = "Chocolates";
+    String snacks = "Salty snacks";
 
     public void buy(Product product) throws ProductNotFoundException {
         if (product instanceof SoftDrinks) {
