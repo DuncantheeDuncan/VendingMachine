@@ -6,11 +6,13 @@ import vendingmachine.Products.Product;
 import vendingmachine.Products.SaltySnacks;
 import vendingmachine.Products.SoftDrinks;
 
-public class VendingMachine {
+public  class VendingMachine {
 
-    int softDrinksAvailable = 0;
-    int chocolatesAvalable = 0;
-    int saltySnackAvailable = 0;
+   public int softDrinksAvailable = 0;
+    public int chocolatesAvalable = 0;
+    private int saltySnackAvailable = 0;
+
+
 
     String softdrinks = "soft drinks";
     String chocolate = "Chocolates";
@@ -68,6 +70,7 @@ public class VendingMachine {
                 System.out.println("Added new stock:");
                 System.out.println(snacks + " Added : " + "(" + newStock + ") Items");
                 System.out.println("Total stock of " + snacks + ":" + saltySnackAvailable + "\n\n");
+
             } else {
 
                 throw new InvalidProductException("Vending Machine can't take this kind of product");
@@ -98,7 +101,9 @@ public class VendingMachine {
 
 //    return 0;
     }
-}
 
+
+    public int saltySnackAvailable(){ return saltySnackAvailable; }
+}
 
 
