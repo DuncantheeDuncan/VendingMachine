@@ -18,15 +18,15 @@ public class Main {
 
         try {
 //TODO          Adding Stock
-            vendingMachine.addStock(chocolates, 7);
+            vendingMachine.addStock(saltySnacks, 7);
 
 
 
 
 //TODO       Buying Stock
             vendingMachine.buy(softDrinks);
-            vendingMachine.buy(softDrinks);
-            vendingMachine.buy(softDrinks);
+//            vendingMachine.buy(softDrinks);
+//            vendingMachine.buy(softDrinks);
 
 //TODO       Get Stock Level
             System.out.println(vendingMachine.getStock(softDrinks));
