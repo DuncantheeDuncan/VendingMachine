@@ -8,8 +8,8 @@ import vendingmachine.Products.SoftDrinks;
 
 public  class VendingMachine {
 
-   public int softDrinksAvailable = 0;
-    public int chocolatesAvalable = 0;
+   private int softDrinksAvailable = 0;
+    private int chocolatesAvailable = 0;
     private int saltySnackAvailable = 0;
 
 
@@ -28,8 +28,8 @@ public  class VendingMachine {
             }
 
         } else if (product instanceof Chocolates) {
-            if (chocolatesAvalable > 0) {
-                chocolatesAvalable--;
+            if (chocolatesAvailable > 0) {
+                chocolatesAvailable--;
 
             } else {
                 throw new ChocolatesAllGoneException("Sorry no more " + chocolate + " left");
@@ -59,10 +59,10 @@ public  class VendingMachine {
                 System.out.println("Total stock of " + softdrinks + ":" + softDrinksAvailable + "\n\n");
 
             } else if (product instanceof Chocolates) {
-                chocolatesAvalable = chocolatesAvalable + newStock;
+                chocolatesAvailable = chocolatesAvailable + newStock;
                 System.out.println("Added new stock:");
                 System.out.println(chocolate + " Added : " + "(" + newStock + ") Items");
-                System.out.println("Total stock of " + chocolate + ":" + chocolatesAvalable + "\n\n");
+                System.out.println("Total stock of " + chocolate + ":" + chocolatesAvailable + "\n\n");
 
             } else if (product instanceof SaltySnacks) {
 
@@ -89,7 +89,7 @@ public  class VendingMachine {
             return softDrinksAvailable;
         } else if (product instanceof Chocolates) {
             System.out.print("Available " + chocolate + ": ");
-            return chocolatesAvalable;
+            return chocolatesAvailable;
 
         } else if (product instanceof SaltySnacks) {
             System.out.print("Available " + snacks + ": ");
@@ -104,6 +104,9 @@ public  class VendingMachine {
 
 
     public int saltySnackAvailable(){ return saltySnackAvailable; }
+    public int saltySnackAvailableBuy(){ return saltySnackAvailable--; }
+    public int softDrinksAvailable(){return  softDrinksAvailable;}
+    public int chocolatesAvailable(){return  chocolatesAvailable;}
 }
 
 
