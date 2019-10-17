@@ -1,10 +1,8 @@
 package vendingmachine;
 
-
-
-
 import vendingmachine.Exceptions.InvalidProductException;
 import vendingmachine.Exceptions.NumberMustBeGreaterThanZero;
+import vendingmachine.Exceptions.SaltyCracksAllEatenException;
 import vendingmachine.Products.Chocolates;
 import vendingmachine.Products.SaltySnacks;
 import vendingmachine.Products.SoftDrinks;
@@ -13,33 +11,27 @@ import vendingmachine.Products.SoftDrinks;
 public class MaxiVendingMachine extends VendingMachine {
 
 
-
-public void addStock(SaltySnacks saltySnacks)throws InvalidProductException , NumberMustBeGreaterThanZero {
-
-    if (saltySnackAvailable() > 0){
-
-        saltySnackAvailable();
-
-        System.out.println();
-    }else {
-        throw new NumberMustBeGreaterThanZero("ooooooooooooooo");
-    }
-
-
-}
-public void buy(SaltySnacks saltySnacks){
-
-    saltySnackAvailableBuy();
+public void addStock(SaltySnacks saltySnacks)throws  NumberMustBeGreaterThanZero {
+    saltySnackAvailableAdd();
+    if (saltySnackAvailable() < 1)
+        throw new NumberMustBeGreaterThanZero("you can't add a zero stock");
 }
 
-public void addStock(SoftDrinks softDrinks){
 
-    softDrinksAvailable();
+
+public void buy(SaltySnacks saltySnacks) throws SaltyCracksAllEatenException {
+
+   if (saltySnackAvailable() <1)
+       throw new SaltyCracksAllEatenException("no more snacks left");
+
+   saltySnackAvailableBuy();
+
 }
 
-public void addStock(Chocolates chocolates){
+public void getStock(SaltySnacks saltySnacks){
 
-    chocolatesAvailable();
+    System.out.println("Available salty snacks "+saltySnackAvailable());
+
 
 }
 
