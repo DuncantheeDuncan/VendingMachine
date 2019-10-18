@@ -106,10 +106,16 @@ public  class VendingMachine {
 
 
     public int saltySnackAvailableAdd(){ return saltySnackAvailable++; }
-//    public int softDrinksAvailable(){return  softDrinksAvailable;}
-//    public int chocolatesAvailable(){return  chocolatesAvailable;}
-public int saltySnackAvailableBuy(){ return saltySnackAvailable--; }
+    public int saltySnackAvailableBuy(){ return saltySnackAvailable--; }
     public int saltySnackAvailable(){ return saltySnackAvailable; }
+
+    public int softDrinksAvailableAdd(){return softDrinksAvailable++;}
+    public int softDrinksAvailableBuy(){return  softDrinksAvailable--;}
+    public int softDrinksAvailable(){return  softDrinksAvailable;}
+
+    public int chocolatesAvailableAdd(){return chocolatesAvailable++;}
+    public int chocolatesAvailableBuy(){return  chocolatesAvailable--;}
+    public int chocolatesAvailable(){return  chocolatesAvailable;}
 }
 
 

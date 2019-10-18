@@ -11,8 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MaxiVendingMachineTest {
 MaxiVendingMachine mxv = new MaxiVendingMachine();
 
+//Todo testing adding stock for products
+
 @Test
-void addStock() throws  NumberMustBeGreaterThanZero {
+void testingAddingStockForSaltySnacks() throws NumberMustBeGreaterThanZero, InvalidProductException {
     SaltySnacks saltySnacks = new SaltySnacks();
 
     mxv.addStock(saltySnacks);
@@ -23,8 +25,11 @@ void addStock() throws  NumberMustBeGreaterThanZero {
     assertEquals(4,mxv.saltySnackAvailable());
 }
 
+
+//TODO testing buy method for products
+
 @Test
-    void buy() throws NumberMustBeGreaterThanZero, SaltyCracksAllEatenException {
+    void testingBuyForSaltySnacks() throws NumberMustBeGreaterThanZero, SaltyCracksAllEatenException, InvalidProductException {
     SaltySnacks saltySnacks = new SaltySnacks();
 
 
@@ -38,8 +43,11 @@ void addStock() throws  NumberMustBeGreaterThanZero {
 
 }
 
+//TODO: testing stock level for products
+
+    //Todo
 @Test
-    void getStock() throws NumberMustBeGreaterThanZero {
+    void testingStockLevelForSaltySnacks() throws NumberMustBeGreaterThanZero, InvalidProductException {
     SaltySnacks saltySnacks = new SaltySnacks();
 
     mxv.addStock(saltySnacks);

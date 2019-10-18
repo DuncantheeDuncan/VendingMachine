@@ -18,7 +18,7 @@ public class Main {
 
         try {
 //TODO          Adding Stock
-            vendingMachine.addStock(saltySnacks, 7);
+            vendingMachine.addStock(null, 7);
 
 
 
