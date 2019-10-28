@@ -2,13 +2,10 @@ package vendingmachine;
 
 import vendingmachine.Exceptions.*;
 import vendingmachine.Products.Chocolates;
-import vendingmachine.Products.Product;
 import vendingmachine.Products.SaltySnacks;
 import vendingmachine.Products.SoftDrinks;
 
-
 public class MaxiVendingMachine extends VendingMachine {
-
 //TODO: add stocks for products
 
     //    TODO Salty Snacks
@@ -46,23 +43,23 @@ public class MaxiVendingMachine extends VendingMachine {
 
 
 //TODO: buying stocks
-
     //    TODO Salty Snacks
 
     public void buy(SaltySnacks saltySnacks) throws SaltyCracksAllEatenException {
 
         if (saltySnackAvailable() < 1)
             throw new SaltyCracksAllEatenException("no more snacks left");
+
         saltySnackAvailableBuy();
     }
-
 
     //    TODO Soft Drinks
 
     public void buy(SoftDrinks softDrinks) throws SoftDrinksOutOfStockException {
 
         if (softDrinksAvailable() < 1)
-            throw new SoftDrinksOutOfStockException("no more SOft drinks left");
+            throw new SoftDrinksOutOfStockException("No more SOft drinks left");
+
         softDrinksAvailableBuy();
     }
 
@@ -70,8 +67,9 @@ public class MaxiVendingMachine extends VendingMachine {
 
     public void buy(Chocolates chocolates) throws ChocolatesAllGoneException {
 
-        if (saltySnackAvailable() < 1)
+        if (chocolatesAvailable() < 1)
             throw new ChocolatesAllGoneException("no more Chocolates left");
+
         chocolatesAvailableBuy();
     }
 

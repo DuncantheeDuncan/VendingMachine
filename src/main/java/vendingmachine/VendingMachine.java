@@ -6,15 +6,13 @@ import vendingmachine.Products.Product;
 import vendingmachine.Products.SaltySnacks;
 import vendingmachine.Products.SoftDrinks;
 
-public  class VendingMachine {
+public class VendingMachine {
 
-   private int softDrinksAvailable = 0;
+    private int softDrinksAvailable = 0;
     private int chocolatesAvailable = 0;
     private int saltySnackAvailable = 0;
 
-
-
-    String softdrinks = "soft drinks";
+    String softDrinks = "soft drinks";
     String chocolate = "Chocolates";
     String snacks = "Salty snacks";
 
@@ -22,41 +20,35 @@ public  class VendingMachine {
         if (product instanceof SoftDrinks) {
             if (softDrinksAvailable > 0) {
                 softDrinksAvailable--;
-
             } else {
-                throw new SoftDrinksOutOfStockException("Sorry no more " + softdrinks + " left");
+                throw new SoftDrinksOutOfStockException("Sorry no more " + softDrinks + " left");
             }
 
         } else if (product instanceof Chocolates) {
             if (chocolatesAvailable > 0) {
                 chocolatesAvailable--;
-
             } else {
                 throw new ChocolatesAllGoneException("Sorry no more " + chocolate + " left");
             }
         } else if (product instanceof SaltySnacks) {
             if (saltySnackAvailable > 0) {
                 saltySnackAvailable--;
-
             } else {
                 throw new SaltyCracksAllEatenException("Sorry no more " + snacks + " left");
             }
         } else {
             throw new InvalidProductException("We don't sell that here!!");
         }
-
     }
 
 
     public void addStock(Product product, int newStock) throws NumberMustBeGreaterThanZero, InvalidProductException {
-
         if (newStock > 0) {
             if (product instanceof SoftDrinks) {
-
                 softDrinksAvailable = softDrinksAvailable + newStock;
                 System.out.println("Added new stock:");
-                System.out.println(softdrinks + " Added : " + "(" + newStock + ") Items");
-                System.out.println("Total stock of " + softdrinks + ":" + softDrinksAvailable + "\n\n");
+                System.out.println(softDrinks + " Added : " + "(" + newStock + ") Items");
+                System.out.println("Total stock of " + softDrinks + ":" + softDrinksAvailable + "\n\n");
 
             } else if (product instanceof Chocolates) {
                 chocolatesAvailable = chocolatesAvailable + newStock;
@@ -72,12 +64,10 @@ public  class VendingMachine {
                 System.out.println("Total stock of " + snacks + ":" + saltySnackAvailable + "\n\n");
 
             } else {
-
                 throw new InvalidProductException("Vending Machine can't take this kind of product");
             }
 
         } else {
-
             throw new NumberMustBeGreaterThanZero("you can't add a Zero '0' or negative Stock");
         }
     }
@@ -85,7 +75,7 @@ public  class VendingMachine {
 
     public int getStock(Product product) throws ProductNotFoundException {
         if (product instanceof SoftDrinks) {
-            System.out.print("Available " + softdrinks + ": ");
+            System.out.print("Available " + softDrinks + ": ");
             return softDrinksAvailable;
         } else if (product instanceof Chocolates) {
             System.out.print("Available " + chocolate + ": ");
@@ -102,20 +92,39 @@ public  class VendingMachine {
 //    return 0;
     }
 
+    public int saltySnackAvailableAdd() {
+        return saltySnackAvailable++;
+    }
 
+    public int saltySnackAvailableBuy() {
+        return saltySnackAvailable--;
+    }
 
+    public int saltySnackAvailable() {
+        return saltySnackAvailable;
+    }
 
-    public int saltySnackAvailableAdd(){ return saltySnackAvailable++; }
-    public int saltySnackAvailableBuy(){ return saltySnackAvailable--; }
-    public int saltySnackAvailable(){ return saltySnackAvailable; }
+    public int softDrinksAvailableAdd() {
+        return softDrinksAvailable++;
+    }
 
-    public int softDrinksAvailableAdd(){return softDrinksAvailable++;}
-    public int softDrinksAvailableBuy(){return  softDrinksAvailable--;}
-    public int softDrinksAvailable(){return  softDrinksAvailable;}
+    public int softDrinksAvailableBuy() {
+        return softDrinksAvailable--;
+    }
 
-    public int chocolatesAvailableAdd(){return chocolatesAvailable++;}
-    public int chocolatesAvailableBuy(){return  chocolatesAvailable--;}
-    public int chocolatesAvailable(){return  chocolatesAvailable;}
+    public int softDrinksAvailable() {
+        return softDrinksAvailable;
+    }
+
+    public int chocolatesAvailableAdd() {
+        return chocolatesAvailable++;
+    }
+
+    public int chocolatesAvailableBuy() {
+        return chocolatesAvailable--;
+    }
+
+    public int chocolatesAvailable() {
+        return chocolatesAvailable;
+    }
 }
-
-

@@ -1,6 +1,2 @@
 package vendingmachine.Products;
-
-public class Product {
-
-
-}
+public class Product {}

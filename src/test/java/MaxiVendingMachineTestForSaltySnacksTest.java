@@ -9,18 +9,21 @@ import vendingmachine.Products.SaltySnacks;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class MaxiVendingMachineTest {
+public class MaxiVendingMachineTestForSaltySnacksTest {
     MaxiVendingMachine mxv = new MaxiVendingMachine();
 
 //Todo testing adding stock for products
 
     @Test
-    void testingAddingStockForSaltySnacks() throws NumberMustBeGreaterThanZero, InvalidProductException {
+    void testingAddingStockForSaltySnacks() throws NumberMustBeGreaterThanZero, InvalidProductException, SaltyCracksAllEatenException {
         SaltySnacks saltySnacks = new SaltySnacks();
 
         mxv.addStock(saltySnacks);
+        mxv.addStock(saltySnacks);
+        mxv.addStock(saltySnacks);
+        mxv.buy(saltySnacks);
 
-        assertEquals(1, mxv.saltySnackAvailable());
+        assertEquals(2, mxv.saltySnackAvailable());
 
         mxv.addStock(saltySnacks);
         mxv.addStock(saltySnacks);
@@ -29,12 +32,8 @@ public class MaxiVendingMachineTest {
             System.out.println("Exception -> 'NumberMustBeGreaterThanZero' was thrown");
             assertThrows(NumberMustBeGreaterThanZero.class, () ->
                     mxv.addStock(saltySnacks));
-
         }
-
-
     }
-
 
 //TODO testing buy method for products
 
@@ -61,10 +60,7 @@ public class MaxiVendingMachineTest {
             assertThrows(SaltyCracksAllEatenException.class, () ->
                     mxv.buy(saltySnacks));
         }
-
-
     }
-
 
 //TODO: testing stock level for products
 
@@ -77,13 +73,8 @@ public class MaxiVendingMachineTest {
         mxv.addStock(saltySnacks);
         mxv.addStock(saltySnacks);
 
-
-//    mxv.getStock(saltySnacks);
+        mxv.getStock(saltySnacks);
 
         assertEquals(3, mxv.saltySnackAvailable());
-
-
     }
-
-
 }

@@ -1,7 +1,4 @@
 package vendingmachine.Products;
-
-public class SaltySnacks extends Product {
-
-}
+public class SaltySnacks extends Product{}
 
 

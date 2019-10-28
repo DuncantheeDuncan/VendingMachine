@@ -7,11 +7,9 @@ import vendingmachine.Products.SaltySnacks;
 import vendingmachine.Products.SoftDrinks;
 
 public class Main {
-
-
     public static void main(String[] args) {
-
         VendingMachine vendingMachine = new VendingMachine();
+
         Product softDrinks = new SoftDrinks();
         Product chocolates = new Chocolates();
         Product saltySnacks = new SaltySnacks();
@@ -20,12 +18,8 @@ public class Main {
 //TODO          Adding Stock
             vendingMachine.addStock(null, 7);
 
-
-
-
 //TODO       Buying Stock
             vendingMachine.buy(softDrinks);
-//            vendingMachine.buy(softDrinks);
 //            vendingMachine.buy(softDrinks);
 
 //TODO       Get Stock Level
@@ -35,7 +29,6 @@ public class Main {
 
         } catch (SoftDrinksOutOfStockException e) {
             System.out.println(e.getMessage());
-
 
         } catch (ChocolatesAllGoneException e) {
             System.out.println(e.getMessage());
@@ -51,8 +44,5 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-
     }
-
-
 }
